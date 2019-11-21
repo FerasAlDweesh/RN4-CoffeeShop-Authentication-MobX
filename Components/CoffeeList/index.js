@@ -11,7 +11,7 @@ import coffeeStore from "../../Stores/coffeeStore";
 // Component
 import CoffeeItem from "./CoffeeItem";
 import CartButton from "../Buttons/CartButton";
-import Logout from "../Buttons/AuthButton";
+import Logout from "../Buttons/Logout";
 
 const CoffeeList = ({ navigation }) => {
   if (coffeeStore.loading) return <Spinner />;
@@ -21,7 +21,7 @@ const CoffeeList = ({ navigation }) => {
   return (
     <Content>
       <List>{coffeeshopList}</List>
-      <Logout />
+      {authStore.user && <Logout />}
     </Content>
   );
 };

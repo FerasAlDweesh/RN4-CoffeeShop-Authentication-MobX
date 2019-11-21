@@ -10,7 +10,7 @@ import authStore from "../../Stores/authStore";
 const CartButton = ({ navigation }) => {
   const handlePress = () => {
     if (authStore.user) navigation.navigate("CartScreen");
-    else navigation.navigate("CartScreen");
+    else navigation.navigate("Login");
   };
 
   return (
